@@ -5,7 +5,7 @@ import PageTransition from "../animations/PageTransition";
 // Set this to the exact filename of your hero art, dropped into
 // frontend/public/assets/hero/ — check with `dir`/`ls` for the real
 // extension before assuming .png.
-const HERO_IMAGE = "hero_pic.png";
+const HERO_IMAGE = "hero_pic-removebg-preview.png";
 
 export default function Landing() {
   const reduce = useReducedMotion();

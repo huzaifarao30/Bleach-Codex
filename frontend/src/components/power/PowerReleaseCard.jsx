@@ -40,13 +40,13 @@ export default function PowerReleaseCard({ power, index = 0 }) {
       <div className="power-body">{power.ability_description}</div>
       {power.rules_and_limitations && (
         <div className="power-rules">
-          <strong>Rules & limitations — </strong>
+          <strong>Rules & limitations: </strong>
           {power.rules_and_limitations}
         </div>
       )}
       {power.evolution_notes && (
         <div className="power-rules">
-          <strong>Evolution — </strong>
+          <strong>Evolution: </strong>
           {power.evolution_notes}
         </div>
       )}

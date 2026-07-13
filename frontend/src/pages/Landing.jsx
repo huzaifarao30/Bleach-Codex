@@ -14,7 +14,7 @@ export default function Landing() {
     <PageTransition>
       <div className="landing-hero">
         <div className="landing-copy">
-          <div className="eyebrow">Vertical Slice — Kurosaki Family · Soul Society Arc</div>
+          <div className="eyebrow">Vertical Slice, Kurosaki Family · Soul Society Arc</div>
           <motion.h1
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export default function Landing() {
           </motion.h1>
           <p>
             Bleach Codex is a structured encyclopedia that reasons across the story
-            instead of just displaying it — every character, power, and reveal traced
+            instead of just displaying it, every character, power, and reveal traced
             back to its source chapter. Explore the Kurosaki family tree, trace
             foreshadowing to its payoff, and see exactly where the story keeps its
             promises.

@@ -11,7 +11,7 @@ export default function Characters() {
     <PageTransition>
       <h1 className="page-title">Characters</h1>
       <p className="page-sub">
-        Every figure in the current slice — select a character to open their full record.
+        Every figure in the current slice. Select a character to open their full record.
       </p>
 
       {loading && <LoadingScreen label="Opening the archive…" />}
@@ -22,7 +22,7 @@ export default function Characters() {
       )}
       {data && data.length === 0 && (
         <div className="state-msg">
-          The archive is empty — run the seed script to populate it.
+          The archive is empty. Run the seed script to populate it.
         </div>
       )}
       {data && (

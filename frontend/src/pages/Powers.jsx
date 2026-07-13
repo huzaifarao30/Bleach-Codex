@@ -19,14 +19,14 @@ export default function Powers() {
     <PageTransition>
       <h1 className="page-title">Powers</h1>
       <p className="page-sub">
-        Every recorded ability across every character in the slice — each entry carries
+        Every recorded ability across every character in the slice, each entry carries
         its canon rules and how it evolves later in the story.
       </p>
 
       {loading && <LoadingScreen label="Releasing…" />}
-      {error && <div className="state-msg error">Couldn't load powers — is the API running?</div>}
+      {error && <div className="state-msg error">Couldn't load powers. Is the API running?</div>}
       {powers && powers.length === 0 && (
-        <div className="state-msg">No powers recorded yet — run the seed script.</div>
+        <div className="state-msg">No powers recorded yet. Run the seed script.</div>
       )}
       {powers &&
         powers.map((p, i) => {

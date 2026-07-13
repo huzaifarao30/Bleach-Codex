@@ -18,12 +18,12 @@ export default function Foreshadowing() {
     <PageTransition>
       <h1 className="page-title">Foreshadowing → Payoff</h1>
       <p className="page-sub">
-        Early hints traced forward to the reveals they set up — every link backed by a
+        Early hints traced forward to the reveals they set up, every link backed by a
         chapter citation, visible inline.
       </p>
 
       {loading && <LoadingScreen label="Reading between the lines…" />}
-      {error && <div className="state-msg error">Couldn't load the timeline — is the API running?</div>}
+      {error && <div className="state-msg error">Couldn't load the timeline. Is the API running?</div>}
       {!loading && entries.length === 0 && (
         <div className="coming-soon">
           <div className="eyebrow">Coming Soon</div>

@@ -21,7 +21,7 @@ export default function FamilyTree() {
       <h1 className="page-title">Family Tree</h1>
       <p className="page-sub">
         Relationships as an explorable graph. Every connection label is shown from the
-        centered character's perspective — click any node to re-center on them.
+        centered character's perspective. Click any node to re-center on them.
       </p>
 
       {!id && (
@@ -47,7 +47,7 @@ export default function FamilyTree() {
 
       {id && tree.loading && <LoadingScreen label="Tracing bloodlines…" />}
       {id && tree.error && (
-        <div className="state-msg error">Couldn't load this tree — is the API running?</div>
+        <div className="state-msg error">Couldn't load this tree. Is the API running?</div>
       )}
       {id && tree.data && (
         <FamilyTreeGraph

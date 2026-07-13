@@ -143,7 +143,7 @@ export default function FamilyTreeGraph({ tree, focusId, onFocus }) {
         })}
       </svg>
       <div className="tree-hint">
-        {focusNode ? `Centered on ${focusNode.name} — ` : ""}click any node to re-center
+        {focusNode ? `Centered on ${focusNode.name}. ` : ""}click any node to re-center
       </div>
     </div>
   );

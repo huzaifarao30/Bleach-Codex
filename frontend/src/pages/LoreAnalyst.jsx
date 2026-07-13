@@ -29,7 +29,7 @@ export default function LoreAnalyst() {
       setMessages((m) => [...m, { role: "analyst", text: result.answer, sources: result.sources }]);
     } catch (e) {
       if (e.status === 503) {
-        setError("The Analyst's backend isn't fully configured yet — it needs a Gemini API key set on the server before it can answer anything.");
+        setError("The Analyst's backend isn't fully configured yet. It needs a Gemini API key set on the server before it can answer anything.");
       } else {
         setError("Couldn't reach the Analyst. Check that the backend is running, then try again.");
       }
@@ -43,7 +43,7 @@ export default function LoreAnalyst() {
       <PageTransition>
         <h1 className="page-title">Lore Analyst</h1>
         <p className="page-sub">
-          Before anything else — how far have you gotten? Every answer the Analyst
+          Before anything else, how far have you gotten? Every answer the Analyst
           gives will stay within that point. Nothing past it, ever, even if you ask
           directly.
         </p>
@@ -94,7 +94,7 @@ export default function LoreAnalyst() {
           <div className="analyst-msg">
             Ask anything about the story up to your stated point. When the Codex has real
             data on it, answers are grounded and cite their source. When it doesn't, the
-            Analyst can still answer from general Bleach knowledge — clearly labeled as
+            Analyst can still answer from general Bleach knowledge, clearly labeled as
             such so you always know which kind of answer you're getting. Either way,
             nothing past your spoiler boundary gets discussed.
           </div>

@@ -1,0 +1,21 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+frontend/dist/
+
+# Environment secrets - never commit these
+.env
+backend/.env
+
+# Local RAG vector store - rebuilt via /lore-analyst/reindex, shouldn't be in git
+backend/chroma_db/
+
+# OS/editor cruft
+.DS_Store
+*.log

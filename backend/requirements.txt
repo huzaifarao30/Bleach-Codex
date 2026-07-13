@@ -1,0 +1,17 @@
+# --- Core backend ---
+fastapi==0.139.0
+uvicorn[standard]==0.51.0
+pymongo==4.17.0
+pydantic==2.13.4
+pydantic-settings==2.14.2
+
+# --- Testing ---
+pytest==9.1.1
+pytest-asyncio==1.4.0
+httpx==0.28.1
+mongomock==4.3.0
+mongomock-motor==0.0.36
+
+# --- AI Lore Analyst (RAG) ---
+chromadb==1.5.9
+google-genai==2.11.0

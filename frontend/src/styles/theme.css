@@ -651,6 +651,22 @@ button {
   color: var(--blood-bright);
 }
 
+.coming-soon {
+  padding: 60px 40px;
+  text-align: center;
+  max-width: 480px;
+  margin: 20px auto;
+  background: var(--void-raised);
+  border: var(--edge);
+  border-radius: var(--radius);
+}
+
+.coming-soon p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
 .loading-screen {
   display: flex;
   flex-direction: column;

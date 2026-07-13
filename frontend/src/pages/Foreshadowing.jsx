@@ -25,7 +25,13 @@ export default function Foreshadowing() {
       {loading && <LoadingScreen label="Reading between the lines…" />}
       {error && <div className="state-msg error">Couldn't load the timeline — is the API running?</div>}
       {!loading && entries.length === 0 && (
-        <div className="state-msg">No foreshadowing entries recorded yet.</div>
+        <div className="coming-soon">
+          <div className="eyebrow">Coming Soon</div>
+          <p>
+            The first foreshadowing → payoff pair is being written now, tracing an
+            early hint through to its reveal later in the arc. Check back shortly.
+          </p>
+        </div>
       )}
       <div className="timeline">
         {entries.map((e) => (

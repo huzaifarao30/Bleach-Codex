@@ -41,10 +41,22 @@ def reset_collection():
     return _collection
 
 
-def upsert(ids: list[str], documents: list[str], metadatas: list[dict]):
+def upsert(ids: list[str], documents: list[str], metadatas: list[dict], batch_size: int = 8):
+    """
+    Upserts in small batches rather than all at once. Embedding many documents
+    in a single call maximizes peak memory usage during inference — small
+    batches keep memory usage low throughout, which matters on memory-limited
+    hosts (e.g. Render's free tier, 512MB RAM).
+    """
     if not ids:
         return
-    get_collection().upsert(ids=ids, documents=documents, metadatas=metadatas)
+    collection = get_collection()
+    for i in range(0, len(ids), batch_size):
+        collection.upsert(
+            ids=ids[i:i + batch_size],
+            documents=documents[i:i + batch_size],
+            metadatas=metadatas[i:i + batch_size],
+        )
 
 
 def query(query_text: str, n_results: int = 6, max_distance: float = 1.1):

@@ -943,6 +943,40 @@ button {
 }
 
 @media (max-width: 640px) {
+@media (max-width: 640px) {
   .nav { gap: 14px; }
   .tree-svg { height: 420px; }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--void-raised);
+    border-bottom: var(--edge);
+    padding: 8px 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 14px 24px;
+    border-bottom: none;
+    width: 100%;
+  }
+
+  .nav-links a.active {
+    background: var(--gold-soft);
+    border-bottom: none;
+  }
+}
 }

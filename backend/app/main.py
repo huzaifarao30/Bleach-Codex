@@ -10,6 +10,7 @@ if sys.platform == "win32":
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.core.config import settings
 from app.routers import characters, relationships, family_tree, powers, arcs, sources, lore_events, lore_analyst
 
 app = FastAPI(
@@ -18,11 +19,14 @@ app = FastAPI(
     version="0.1.0",
 )
 
-# Allow the local React dev server to call this API from the browser.
-# Tighten allow_origins to the real deployed frontend URL in production.
+# Local dev origins always allowed; add production frontend URL(s) via the
+# ALLOWED_ORIGINS env var (comma-separated) once deployed, e.g.
+# ALLOWED_ORIGINS=https://your-app.vercel.app
+_extra_origins = [o.strip() for o in settings.allowed_origins.split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", *_extra_origins],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

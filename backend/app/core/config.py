@@ -12,6 +12,7 @@ class Settings(BaseSettings):
 
     gemini_api_key: str = ""
     chroma_persist_dir: str = "./chroma_db"
+    allowed_origins: str = ""  # comma-separated extra origins, e.g. your deployed frontend URL
 
     model_config = SettingsConfigDict(env_file=".env")
 
